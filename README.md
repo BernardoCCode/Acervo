@@ -93,13 +93,17 @@ src/
 
 ## Screenshots
 
-_Adicione 2–3 prints aqui (home, busca, leitor) antes de publicar no portfólio._
+<img width="1901" height="1075" alt="{F5121A92-7BF0-4B1D-889C-AFAF16CE77C5}" src="https://github.com/user-attachments/assets/4ec15ae4-4c84-434b-bab0-6a4f837f0d3c" />
 
-<!--
-![Home](docs/screenshots/home.png)
-![Busca](docs/screenshots/search.png)
-![Leitor](docs/screenshots/reader.png)
--->
+
+
+<img width="1918" height="951" alt="{C7CCAD34-48DC-4975-9A06-8631C1B1703D}" src="https://github.com/user-attachments/assets/76f40670-4cef-4231-994b-f722e7462885" />
+
+
+
+<img width="1900" height="946" alt="{F2F195D0-32C9-4578-AD74-E4283D4C6B43}" src="https://github.com/user-attachments/assets/6dbee67b-fb22-4ba4-bd55-a358fedcef27" />
+
+
 
 ## Limitações honestas
 
