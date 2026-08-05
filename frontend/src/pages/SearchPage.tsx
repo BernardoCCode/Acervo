@@ -115,7 +115,7 @@ export function SearchPage() {
           Buscar artigos
         </h1>
         <p className="text-muted">
-          Busca em OpenAlex, Europe PMC, Semantic Scholar e arXiv — só papers com PDF aberto legível aqui.
+          Busca em OpenAlex, Europe PMC, Semantic Scholar e arXiv. Só papers com PDF aberto legível aqui.
         </p>
       </header>
 
@@ -266,7 +266,7 @@ export function SearchPage() {
       {!loading && !params.get('q') && (
         <EmptyState
           title="Comece por um tema"
-          description="Digite o que você quer aprender — Machine Learning, Medicina, Psicologia…"
+          description="Digite o que você quer aprender: Machine Learning, Medicina, Psicologia…"
         />
       )}
     </div>

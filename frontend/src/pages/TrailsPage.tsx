@@ -203,7 +203,7 @@ export function TrailsPage() {
                             </Link>
                           ) : (
                             <p className="mt-3 text-xs text-muted">
-                              Artigo ainda não vinculado — use a busca pelo título do passo.
+                              Artigo ainda não vinculado. Use a busca pelo título do passo.
                             </p>
                           )}
                         </div>

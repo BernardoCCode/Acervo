@@ -313,7 +313,7 @@ export function LibraryPage() {
             collections.length === 0 ? (
               <EmptyState
                 title="Sem coleções"
-                description="Organize artigos por tema — por exemplo “Papers clássicos” ou “Para ler no fim de semana”."
+                description="Organize artigos por tema, por exemplo “Papers clássicos” ou “Para ler no fim de semana”."
               />
             ) : (
               <div className="grid gap-4 sm:grid-cols-2">

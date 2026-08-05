@@ -1,6 +1,6 @@
 # Acervo
 
-Busca, leitura e organização de artigos acadêmicos em um só lugar — com leitor tipográfico, favoritos, coleções e trilhas de aprendizado assistidas por IA.
+Busca, leitura e organização de artigos acadêmicos em um só lugar, com leitor tipográfico, favoritos, coleções e trilhas de aprendizado assistidas por IA.
 
 > Nome do produto na UI: **Acervo**. Repositório histórico: PsiArtigos.
 
@@ -8,11 +8,11 @@ Busca, leitura e organização de artigos acadêmicos em um só lugar — com le
 
 | | |
 |---|---|
-| **URL** | _em breve — cole o link do deploy aqui_ |
+| **URL** | _em breve: cole o link do deploy aqui_ |
 | **Conta de teste** | _email / senha após o deploy_ |
 | **Sem conta** | Na tela `/entrar`, clique em **Explorar sem conta** |
 
-O modo visitante entra com um usuário demo compartilhado — ideal pra recruta testar rápido. Para histórico/favoritos pessoais, use criar conta.
+O modo visitante entra com um usuário demo compartilhado, ideal pra recruta testar rápido. Para histórico/favoritos pessoais, use criar conta.
 
 ## O problema
 

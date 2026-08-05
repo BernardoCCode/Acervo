@@ -41,7 +41,7 @@ export function HomePage() {
         if (!cancelled) {
           setHistory(h)
           setRecommendations(r)
-          // Cold feed is filled in the background — poll a few times without blocking first paint.
+          // Cold feed is filled in the background; poll a few times without blocking first paint.
           if (r.length === 0) {
             const poll = async (attempt: number) => {
               if (cancelled || attempt > 4) return
@@ -125,8 +125,8 @@ export function HomePage() {
           </p>
           <p className="mx-auto mt-4 max-w-xl text-base leading-relaxed text-muted">
             {aiEnabled
-              ? 'Busque em várias fontes acadêmicas numa só tela — e leia, salve e entenda com ajuda de IA.'
-              : 'Busque em várias fontes acadêmicas numa só tela — leia com conforto e salve o que importa.'}
+              ? 'Busque em várias fontes acadêmicas numa só tela. Leia, salve e entenda com ajuda de IA.'
+              : 'Busque em várias fontes acadêmicas numa só tela. Leia com conforto e salve o que importa.'}
           </p>
 
           <form onSubmit={onSubmit} className="mt-8">

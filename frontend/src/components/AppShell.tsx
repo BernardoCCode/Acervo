@@ -38,7 +38,7 @@ export function AppShell() {
           role="status"
           className="border-b border-signal/25 bg-signal/10 px-4 py-2 text-center text-xs text-ink-soft sm:text-sm"
         >
-          Modo visitante — ótimo pra explorar. Crie uma conta para salvar favoritos e histórico só seus.
+          Modo visitante: ótimo pra explorar. Crie uma conta para salvar favoritos e histórico só seus.
           <NavLink
             to="/entrar"
             onClick={logout}

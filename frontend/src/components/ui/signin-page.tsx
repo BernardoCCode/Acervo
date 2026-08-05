@@ -317,7 +317,7 @@ export default function SignIn({
                     Explorar sem conta
                   </Button>
                   <p className="text-center text-xs text-muted">
-                    Modo visitante para demo — crie uma conta para guardar o seu histórico.
+                    Modo visitante para demo. Crie uma conta para guardar o seu histórico.
                   </p>
                 </>
               )}
