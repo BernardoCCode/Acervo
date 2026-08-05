@@ -82,8 +82,8 @@ export const api = {
     return request<AuthResponse>('/api/auth/guest', { method: 'POST' })
   },
 
-  me() {
-    return request<AuthUser>('/api/auth/me')
+  me(init?: RequestInit) {
+    return request<AuthUser>('/api/auth/me', init)
   },
 
   getFeatures() {

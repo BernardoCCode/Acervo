@@ -39,21 +39,31 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       setLoading(false)
       return
     }
+
+    const controller = new AbortController()
+    const timeoutId = window.setTimeout(() => controller.abort(), 90_000)
+
     void api
-      .me()
+      .me({ signal: controller.signal })
       .then((current) => {
         if (!cancelled) setUser(current)
       })
       .catch((error) => {
-        if (!cancelled && error instanceof ApiError && error.status === 401) {
+        if (cancelled) return
+        if (error instanceof ApiError && error.status === 401) {
           localStorage.removeItem('acervo-token')
         }
+        // Abort / network: keep token so a refresh can retry after cold start.
       })
       .finally(() => {
+        window.clearTimeout(timeoutId)
         if (!cancelled) setLoading(false)
       })
+
     return () => {
       cancelled = true
+      controller.abort()
+      window.clearTimeout(timeoutId)
     }
   }, [])
 
