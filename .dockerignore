@@ -1,0 +1,15 @@
+**/.git
+**/.vs
+**/bin
+**/obj
+**/node_modules
+frontend
+.cursor
+.claude
+.windsurf
+.agents
+.impeccable
+**/*.md
+.env
+.env.*
+!.env.example

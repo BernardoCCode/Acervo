@@ -66,10 +66,14 @@ builder.Services.AddAuthorization(options =>
         .RequireAuthenticatedUser()
         .Build();
 });
+var corsOrigins = builder.Configuration["Cors:Origins"]
+    ?.Split(',', StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries)
+    ?? ["http://localhost:5173", "http://127.0.0.1:5173"];
+
 builder.Services.AddCors(options =>
 {
-    options.AddPolicy("FrontendDev", policy =>
-        policy.WithOrigins("http://localhost:5173", "http://127.0.0.1:5173")
+    options.AddPolicy("Frontend", policy =>
+        policy.WithOrigins(corsOrigins)
             .AllowAnyHeader()
             .AllowAnyMethod());
 });
@@ -78,11 +82,7 @@ var app = builder.Build();
 
 await DatabaseInitializer.MigrateAsync(app.Services);
 
-if (app.Environment.IsDevelopment())
-{
-    app.UseCors("FrontendDev");
-}
-
+app.UseCors("Frontend");
 app.UseResponseCompression();
 app.UseMiddleware<ExceptionHandlingMiddleware>();
 
@@ -91,7 +91,12 @@ if (app.Environment.IsDevelopment())
     app.MapOpenApi();
 }
 
-app.UseHttpsRedirection();
+// TLS is terminated at the host (Render / Vercel); Kestrel listens on HTTP inside the container.
+if (app.Environment.IsDevelopment())
+{
+    app.UseHttpsRedirection();
+}
+
 app.UseAuthentication();
 app.UseAuthorization();
 app.MapControllers();
