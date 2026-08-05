@@ -1,0 +1,45 @@
+## .NET
+bin/
+obj/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+.vs/
+*.DotSettings.user
+
+## Build
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+[Aa][Rr][Mm]/
+[Aa][Rr][Mm]64/
+artifacts/
+
+## Node / frontend
+node_modules/
+frontend/dist/
+*.tsbuildinfo
+.npm
+.vite/
+
+## Secrets / env
+.env
+.env.local
+.env.*.local
+appsettings.*.local.json
+**/secrets.json
+
+## Keep env template
+!.env.example
+
+## OS / IDE
+.DS_Store
+Thumbs.db
+.idea/
+*.swp
+.cursor/
+.claude/
+.windsurf/
+.agents/

@@ -1,0 +1,15 @@
+global using PsiArtigos.Application.Common.Exceptions;
+global using PsiArtigos.Application.DTOs.Articles;
+global using PsiArtigos.Application.DTOs.Insights;
+global using PsiArtigos.Application.DTOs.Learning;
+global using PsiArtigos.Application.DTOs.Library;
+global using PsiArtigos.Application.DTOs.Reading;
+global using PsiArtigos.Application.DTOs.Recommendations;
+global using PsiArtigos.Application.DTOs.Search;
+global using PsiArtigos.Application.Interfaces;
+global using PsiArtigos.Application.Mapping;
+global using PsiArtigos.Domain.Aggregates;
+global using PsiArtigos.Domain.Enums;
+global using PsiArtigos.Domain.Exceptions;
+global using PsiArtigos.Domain.Services;
+global using PsiArtigos.Domain.ValueObjects;

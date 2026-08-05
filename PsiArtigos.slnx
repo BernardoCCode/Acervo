@@ -1,0 +1,8 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/PsiArtigos.Api/PsiArtigos.Api.csproj" />
+    <Project Path="src/PsiArtigos.Application/PsiArtigos.Application.csproj" />
+    <Project Path="src/PsiArtigos.Domain/PsiArtigos.Domain.csproj" />
+    <Project Path="src/PsiArtigos.Infrastructure/PsiArtigos.Infrastructure.csproj" />
+  </Folder>
+</Solution>
