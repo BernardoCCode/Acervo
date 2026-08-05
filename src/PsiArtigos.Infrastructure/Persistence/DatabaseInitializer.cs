@@ -15,7 +15,19 @@ public static class DatabaseInitializer
 
         try
         {
-            logger.LogInformation("Applying database migrations...");
+            var raw = dbContext.Database.GetConnectionString() ?? "(null)";
+            var host = "(unknown)";
+            try
+            {
+                var builder = new Npgsql.NpgsqlConnectionStringBuilder(raw);
+                host = $"{builder.Host}/{builder.Database} user={builder.Username}";
+            }
+            catch
+            {
+                /* ignore parse errors for logging */
+            }
+
+            logger.LogInformation("Applying database migrations to {Target}...", host);
             await dbContext.Database.MigrateAsync(cancellationToken);
             logger.LogInformation("Database is up to date.");
         }

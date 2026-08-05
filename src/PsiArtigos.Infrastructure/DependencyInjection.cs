@@ -48,8 +48,9 @@ public static class DependencyInjection
 
         services.AddDbContext<PsiArtigosDbContext>(options =>
         {
-            var connectionString = configuration.GetConnectionString("DefaultConnection")
-                ?? "Host=localhost;Port=5432;Database=psiartigos;Username=psiartigos;Password=psiartigos";
+            var connectionString = NormalizePostgresConnectionString(
+                configuration.GetConnectionString("DefaultConnection")
+                ?? "Host=localhost;Port=5432;Database=psiartigos;Username=psiartigos;Password=psiartigos");
 
             options.UseNpgsql(connectionString);
         });
@@ -169,5 +170,41 @@ public static class DependencyInjection
         }
 
         return services;
+    }
+
+    /// <summary>
+    /// Neon connection strings often include channel_binding, which can crash Npgsql on boot.
+    /// Normalize to a key/value string Npgsql accepts reliably in production.
+    /// </summary>
+    private static string NormalizePostgresConnectionString(string connectionString)
+    {
+        var cleaned = connectionString.Trim().Trim('"', '\'');
+        cleaned = cleaned
+            .Replace("&channel_binding=require", "", StringComparison.OrdinalIgnoreCase)
+            .Replace("?channel_binding=require&", "?", StringComparison.OrdinalIgnoreCase)
+            .Replace("?channel_binding=require", "", StringComparison.OrdinalIgnoreCase)
+            .Replace(";Channel Binding=Require", "", StringComparison.OrdinalIgnoreCase)
+            .Replace(";Channel Binding=Prefer", "", StringComparison.OrdinalIgnoreCase)
+            .TrimEnd('?', '&');
+
+        try
+        {
+            var builder = new Npgsql.NpgsqlConnectionStringBuilder(cleaned)
+            {
+                ChannelBinding = Npgsql.ChannelBinding.Disable,
+            };
+
+            if (builder.Host?.Contains("neon.tech", StringComparison.OrdinalIgnoreCase) == true)
+            {
+                builder.SslMode = Npgsql.SslMode.Require;
+                builder.TrustServerCertificate = true;
+            }
+
+            return builder.ConnectionString;
+        }
+        catch
+        {
+            return cleaned;
+        }
     }
 }
