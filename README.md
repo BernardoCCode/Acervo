@@ -8,8 +8,8 @@ Busca, leitura e organização de artigos acadêmicos em um só lugar, com leito
 
 | | |
 |---|---|
-| **URL** | _em breve: cole o link do deploy aqui_ |
-| **Conta de teste** | _email / senha após o deploy_ |
+| **URL** | acervo-woad-five.vercel.app |
+| **Conta de teste** | Sem e-mail/senha pré-cadastrados. Crie uma conta em `/entrar` se quiser histórico próprio |
 | **Sem conta** | Na tela `/entrar`, clique em **Explorar sem conta** |
 
 O modo visitante entra com um usuário demo compartilhado, ideal pra recruta testar rápido. Para histórico/favoritos pessoais, use criar conta.
