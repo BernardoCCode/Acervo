@@ -8,7 +8,7 @@ Busca, leitura e organização de artigos acadêmicos em um só lugar, com leito
 
 | | |
 |---|---|
-| **URL** | acervo-woad-five.vercel.app |
+| **URL** | https://acervo-woad-five.vercel.app |
 | **Conta de teste** | Sem e-mail/senha pré-cadastrados. Crie uma conta em `/entrar` se quiser histórico próprio |
 | **Sem conta** | Na tela `/entrar`, clique em **Explorar sem conta** |
 
